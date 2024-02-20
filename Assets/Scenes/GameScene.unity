@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 873913429}
   - component: {fileID: 873913428}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: BubbleSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
