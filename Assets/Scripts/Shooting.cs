@@ -6,7 +6,7 @@ public class Shooting : MonoBehaviour
 {
     public GameObject bulletPrefab; // Reference to the bullet prefab
     public Transform shootPoint; // Point where the bubbles and bullets will be spawned
-    public float shootSpeed = 10f; // Fixed speed for the bubbles
+    public float shootSpeed = 100f; // Fixed speed for the bubbles
 
     void Update()
     {
@@ -22,16 +22,25 @@ public class Shooting : MonoBehaviour
         // Instantiate a new bullet at the shoot point
         GameObject newBullet = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
 
-        // Attach the Bullet script to the instantiated bullet
-        newBullet.AddComponent<Bullet>();
-
         // Get the Rigidbody component of the bullet
-        Rigidbody2D bulletRb = newBullet.GetComponent<Rigidbody2D>(); // Assuming you're using 2D physics
+        Rigidbody2D bulletRb = newBullet.GetComponent<Rigidbody2D>();
 
         // Calculate the direction from shooter to mouse position
-        Vector2 shootDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+        Vector2 shootDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - shootPoint.position);
+
+        shootDirection.Normalize();
 
         // Apply a fixed speed to the bullet in the calculated direction
         bulletRb.velocity = shootDirection * shootSpeed;
+
+        // Calculate the angle in degrees from the direction vector
+        float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
+        angle += 180f;
+
+
+        // Rotate the bullet to face the direction it's moving
+        newBullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+
     }
 }

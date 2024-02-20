@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+
     void OnTriggerEnter2D(Collider2D other)
     {
         // Check if the bullet collides with a GameObject tagged as "Bubble"

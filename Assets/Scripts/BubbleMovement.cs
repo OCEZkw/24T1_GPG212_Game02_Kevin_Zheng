@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BubbleMovement : MonoBehaviour
 {
     public float moveSpeed = 5f; // Speed of the bubble's upward movement
     public float destroyHeight = 10f; // Height at which the bubble will be destroyed
+
+    private Score score;
+
+    private void Start()
+    {
+        score = GameObject.FindObjectOfType<Score>();
+    }
 
     void Update()
     {
@@ -22,13 +30,11 @@ public class BubbleMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if the bubble collides with a GameObject tagged as "Bullet"
         if (other.CompareTag("Bullet"))
         {
-            // Destroy the bubble when it collides with a bullet
             Destroy(gameObject);
-
-            // You can add additional logic here, such as updating the score or playing a sound
+            // Call the IncrementScore method from the ScoreManager script
+            score.IncrementScore();
         }
     }
 }
