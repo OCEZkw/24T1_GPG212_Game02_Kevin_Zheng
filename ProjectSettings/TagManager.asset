@@ -7,6 +7,7 @@ TagManager:
   - Bubble
   - Bullet
   - BulletDestroyer
+  - Bomb
   layers:
   - Default
   - TransparentFX

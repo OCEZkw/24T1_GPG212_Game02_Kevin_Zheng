@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 533755046822899765}
   - component: {fileID: 4042605345246598215}
-  - component: {fileID: 6310328315381119540}
   - component: {fileID: 4471468493538101638}
   - component: {fileID: -8381505645619920910}
+  - component: {fileID: -5878309963161127582}
   m_Layer: 0
-  m_Name: Bubble
-  m_TagString: Bubble
+  m_Name: Bubble 1
+  m_TagString: Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,21 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6310328315381119540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7604741727614482223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7854f01d04514ac47b725671fdc4cb68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
-  destroyHeight: 10
-  maxHealth: 2
 --- !u!50 &4471468493538101638
 Rigidbody2D:
   serializedVersion: 4
@@ -159,8 +144,20 @@ CircleCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-5878309963161127582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7604741727614482223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a98548f6a22e584f83711102131c849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
