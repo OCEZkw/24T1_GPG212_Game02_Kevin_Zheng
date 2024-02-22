@@ -21,5 +21,11 @@ public class Bullet : MonoBehaviour
             // Destroy the bullet when it collides with a BulletDestroy object
             Destroy(gameObject);
         }
+
+        if (other.CompareTag("Bomb"))
+        {
+            // Destroy the bullet when it collides with a bomb
+            Destroy(gameObject);
+        }
     }
 }
